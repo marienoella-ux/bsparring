@@ -42,7 +42,7 @@ Ce document répond à la section « Choix techniques laissés à Dev » du brie
 **Total : environ 45 $/mois** (≈ 27 000 FCFA) pour la production.
 
 - **Deux environnements séparés** : `test` (branche `develop`, projet Supabase de test, URL de prévisualisation) et `production` (branche `main`, projet Supabase de production). Les données ne sont jamais partagées entre les deux.
-- **Propriété des comptes** : le dépôt GitHub, Vercel, Supabase et Resend appartiennent tous à Brainiacs (organisation ou compte Brainiacs). Dev y est invité comme membre ; ses accès se retirent sans rien perdre.
+- **Propriété des comptes** : Vercel, Supabase et Resend appartiennent à Brainiacs (adresse `@brainiacscompany.com`). Le code reste sur le dépôt GitHub `marienoella-ux/bsparring` (décision Brainiacs du 14 octobre 2026 : pas de transfert vers une organisation). Les accès de Dev se retirent sans rien perdre.
 - **Région** : Supabase n'a pas de région en Afrique. Nous proposons l'Europe (Francfort ou Paris), qui offre la meilleure latence depuis Douala parmi les régions disponibles.
   > **Point bloquant pour la production, pas pour le test.** La loi camerounaise sur la protection des données personnelles (loi du 23 décembre 2024, en vigueur depuis le 23 juin 2026) encadre les transferts de données hors du territoire. La validation juridique est en cours chez Brainiacs. L'environnement de test peut être hébergé en Europe dès le lot 1 (avec des données fictives uniquement). **La mise en production attend l'avis juridique.** Si l'hébergement européen n'est pas retenu, la stack reste la même mais la base passe sur un PostgreSQL auto-hébergé ou chez un hébergeur au Cameroun. Le coût et le délai de cette bascule seront chiffrés le cas échéant.
   > Les CGU contiendront une clause sur le lieu d'hébergement des données. Brainiacs en fournit la rédaction.
@@ -271,7 +271,7 @@ bsparring/
 ## 11. Ce dont nous avons besoin pour démarrer le lot 1
 
 1. **Validation de ce document** (ou corrections).
-2. Création des comptes au nom de Brainiacs : **GitHub** (organisation Brainiacs, qui recevra ce dépôt), **Vercel**, **Supabase** (deux projets : test et production), **Resend**. Dev peut guider la création ; les comptes doivent appartenir à Brainiacs, pas à Dev.
+2. Création des comptes au nom de Brainiacs : **GitHub** (dépôt actuel `marienoella-ux/bsparring`, conservé), **Vercel**, **Supabase** (deux projets : test et production), **Resend**. Dev peut guider la création ; les comptes doivent appartenir à Brainiacs, pas à Dev.
 3. Accès DNS de `brainiacscompany.com` pour créer le sous-domaine.
 4. Une adresse d'expédition des emails (par exemple `sparring@brainiacscompany.com`) et la vérification DNS associée.
 
@@ -290,5 +290,5 @@ Les points ouverts du brief (prix, validité, seuil d'annulation, protocole, NDA
 | 3 | Aucun contenu dans aucune notification : date et lien uniquement | Section 7 |
 | 4 | Notes vocales : formats, 5 min, 10 Mo, test Safari iOS et Chrome Android | Sections 4, 7 bis, 10 (lot 3) |
 | 5 | Test de restauration complet avant ouverture au public | Sections 2, 10 |
-| 6 | Dépôt GitHub propriété de Brainiacs | Sections 2, 11 |
+| 6 | Propriété des comptes Brainiacs ; le dépôt reste `marienoella-ux/bsparring` (pas de transfert) | Sections 2, 11 |
 | 7 | Hébergement en Europe soumis à validation juridique : bloque la production, pas le test ; clause CGU fournie par Brainiacs | Sections 2, 10, 11 |
