@@ -1,0 +1,112 @@
+/* B-Sparring — tokens CSS (générés depuis tokens.json) */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Source+Sans+3:wght@400;600&display=swap");
+
+:root {
+  --surface: #f6f1e8;
+  --surface-raised: #fffdf8;
+  --surface-sunken: #ede6d8;
+  --line: #cfc4b0;
+  --line-strong: #7c8178;
+  --ink: #1a2420;
+  --ink-muted: #5a5e57;
+  --foret: #1f4d43;
+  --foret-soft: #dce8e2;
+  --on-foret: #f6f1e8;
+  --cuivre: #9c5320;
+  --cuivre-soft: #f3e2d2;
+  --on-cuivre: #fffdf8;
+  --nuit: #14201c;
+  --on-nuit: #f6f1e8;
+  --success: #1f6563;
+  --success-soft: #d7ecea;
+  --warning: #7a4f00;
+  --warning-soft: #f6e9cc;
+  --danger: #a63a2a;
+  --danger-soft: #f6ded8;
+  --info: #2f5d7c;
+  --info-soft: #dde8f0;
+  --focus: var(--cuivre);
+  --link: var(--foret);
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+  --shadow-float: 0 2px 4px rgba(20,32,28,0.06), 0 12px 32px rgba(20,32,28,0.10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #111916;
+    --surface-raised: #1a2420;
+    --surface-sunken: #0c120f;
+    --line: #4a5852;
+    --line-strong: #76857e;
+    --ink: #efe9de;
+    --ink-muted: #a9aea4;
+    --foret: #86bfad;
+    --foret-soft: #1e3832;
+    --on-foret: #0f1714;
+    --cuivre: #e39a60;
+    --cuivre-soft: #3a2617;
+    --on-cuivre: #1a1009;
+    --nuit: #1e3832;
+    --on-nuit: #efe9de;
+    --success: #6cc3c0;
+    --success-soft: #12302f;
+    --warning: #e3b04b;
+    --warning-soft: #33260a;
+    --danger: #f08a76;
+    --danger-soft: #3a1a14;
+    --info: #8db8d8;
+    --info-soft: #15293a;
+    --shadow-float: 0 2px 4px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  --surface: #111916;
+  --surface-raised: #1a2420;
+  --surface-sunken: #0c120f;
+  --line: #4a5852;
+  --line-strong: #76857e;
+  --ink: #efe9de;
+  --ink-muted: #a9aea4;
+  --foret: #86bfad;
+  --foret-soft: #1e3832;
+  --on-foret: #0f1714;
+  --cuivre: #e39a60;
+  --cuivre-soft: #3a2617;
+  --on-cuivre: #1a1009;
+  --nuit: #1e3832;
+  --on-nuit: #efe9de;
+  --success: #6cc3c0;
+  --success-soft: #12302f;
+  --warning: #e3b04b;
+  --warning-soft: #33260a;
+  --danger: #f08a76;
+  --danger-soft: #3a1a14;
+  --info: #8db8d8;
+  --info-soft: #15293a;
+  --shadow-float: 0 2px 4px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.5);
+}
+
+/* Styles de texte */
+.text-display { font-family: var(--font-serif); font-size: 40px; line-height: 44px; font-weight: 600; letter-spacing: -0.01em; }
+.text-h1 { font-family: var(--font-serif); font-size: 30px; line-height: 36px; font-weight: 600; }
+.text-h2 { font-family: var(--font-serif); font-size: 22px; line-height: 28px; font-weight: 600; }
+.text-quote { font-family: var(--font-serif); font-size: 20px; line-height: 28px; font-weight: 400; font-style: italic; }
+.text-body-lg { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 400; }
+.text-body { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 400; }
+.text-label { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 600; }
+.text-caption { font-family: var(--font-sans); font-size: 13px; line-height: 18px; font-weight: 400; }
+.text-overline { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
