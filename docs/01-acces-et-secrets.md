@@ -19,21 +19,20 @@ Le développement est réalisé par **Claude** (Anthropic), un agent IA qui trav
 
 ---
 
-## 1. GitHub (organisation Brainiacs)
+## 1. GitHub (dépôt `marienoella-ux/bsparring`)
 
 À faire par Brainiacs :
 
 | Étape | Détail |
 | --- | --- |
-| Transférer le dépôt | `marienoella-ux/bsparring` → organisation Brainiacs. L'historique et les branches sont conservés. |
-| Double authentification | L'activer comme obligatoire pour tous les membres de l'organisation (Settings → Authentication security). |
-| Installer l'application **Claude** | Sur l'organisation, en choisissant **« Only select repositories » → `bsparring`** uniquement. Lien : https://github.com/apps/claude/installations/select_target |
+| Double authentification | L'activer sur le compte GitHub propriétaire du dépôt (Settings → Password and authentication). |
+| Installer l'application **Claude** | Sur le compte propriétaire, en choisissant **« Only select repositories » → `bsparring`** uniquement. Lien : https://github.com/apps/claude/installations/select_target |
 | Connecter GitHub à Claude | Depuis le compte qui pilote les sessions : https://claude.ai/connect-github |
 | Protéger les branches | `main` et `develop` : fusion uniquement par pull request, au moins une approbation de Brainiacs, pas de push forcé, pas de suppression. |
 
 Accès donné à Dev : **lecture et écriture sur `bsparring` uniquement**, via l'application. Aucun rôle d'administrateur, aucun jeton personnel.
 
-Après le transfert, **une nouvelle session Claude Code** doit être ouverte avec le dépôt de l'organisation sélectionné (une session garde les dépôts choisis à son démarrage).
+Le dépôt reste sur `marienoella-ux/bsparring` : pas de transfert vers une organisation (décision Brainiacs du 14 octobre 2026).
 
 ### Branches
 
@@ -77,7 +76,7 @@ Dev n'a **aucun accès** à Vercel. À faire par Brainiacs :
 
 | Étape | Détail |
 | --- | --- |
-| Importer le projet | Add New → Project → dépôt `bsparring` de l'organisation Brainiacs (après le transfert). Framework : Next.js. |
+| Importer le projet | Add New → Project → dépôt `marienoella-ux/bsparring`. Framework : Next.js. |
 | Branche de production | Settings → Git → Production Branch : `main` |
 | Domaine de test | Rattacher un domaine à la branche `develop` (par exemple `test-sparring.brainiacscompany.com`) — facultatif au lot 1, l'URL `*.vercel.app` suffit |
 | Protection des prévisualisations | Settings → Deployment Protection → **Vercel Authentication** activé pour les prévisualisations |
