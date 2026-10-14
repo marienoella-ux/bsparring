@@ -4,4 +4,16 @@ Plateforme de sparring stratégique pour dirigeants : achat de crédits, soumiss
 
 - `docs/00-architecture.md` — architecture validée (lot 0).
 - `docs/01-acces-et-secrets.md` — accès à configurer et transmission des secrets.
+- `docs/02-configuration-supabase.md` — configuration du projet Supabase de test, premier admin, vérification du lot 1.
 - `design/` — charte graphique B-Sparring (tokens, logos, règles des composants).
+
+## Développement
+
+```bash
+npm install
+cp .env.example .env.local   # puis renseigner les valeurs du projet Supabase de test
+npm run dev                  # http://localhost:3000
+npm test                     # règles métier (Vitest)
+npm run test:db              # règles de sécurité de la base, sur un PostgreSQL local jetable
+npm run typecheck
+```

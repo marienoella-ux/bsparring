@@ -1,0 +1,205 @@
+{
+  "brand": {
+    "name": "B-Sparring",
+    "by": "by Brainiacs",
+    "full": "B-Sparring by Brainiacs"
+  },
+  "nav": {
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "mySpace": "Mon espace",
+    "backOffice": "Back-office",
+    "expertSpace": "Espace expert",
+    "home": "Accueil"
+  },
+  "landing": {
+    "metaDescription": "Le sparring partner stratégique des dirigeants. Un expert et une facilitatrice challengent votre décision, en toute confidentialité.",
+    "overline": "Sparring stratégique pour dirigeants",
+    "title": "Ne décidez plus seul.",
+    "lead": "Un expert du métier et une facilitatrice Brainiacs challengent votre dilemme, en visio ou par écrit. Vous repartez avec un livrable de décision.",
+    "cta": "Soumettre un dilemme",
+    "ctaSecondary": "Se connecter",
+    "howTitle": "Comment ça fonctionne",
+    "steps": [
+      {
+        "title": "Vous posez le dilemme",
+        "text": "Contexte, décision à trancher, options envisagées. Dix minutes depuis votre téléphone."
+      },
+      {
+        "title": "Nous formons le binôme",
+        "text": "Un expert du domaine, sans conflit d'intérêts avec votre organisation, et une facilitatrice Brainiacs."
+      },
+      {
+        "title": "Vous êtes challengé",
+        "text": "En visio de 45 à 60 minutes, ou en sparring écrit, en deux rounds de questions."
+      },
+      {
+        "title": "Vous tranchez",
+        "text": "Un livrable de décision : options, grille, risques et prochaine étape concrète."
+      }
+    ],
+    "domainsTitle": "Domaines couverts",
+    "domains": [
+      {
+        "title": "Stratégie",
+        "text": "Croissance, implantation, positionnement, arbitrages d'investissement."
+      },
+      {
+        "title": "Gestion de projet",
+        "text": "Priorités, ressources, projets en difficulté, choix de prestataires."
+      },
+      {
+        "title": "Innovation",
+        "text": "Nouvelle offre, transformation, pilotes à lancer ou à arrêter."
+      },
+      {
+        "title": "Ressources humaines",
+        "text": "Recrutements clés, organisation, situations sensibles."
+      }
+    ],
+    "trustOverline": "Confidentialité",
+    "trustTitle": "Ce que vous partagez reste ici.",
+    "trustPoints": [
+      "Chaque expert signe un engagement de confidentialité avant toute mission.",
+      "L'expert ne connaît votre identité qu'après avoir accepté la mission et déclaré l'absence de conflit d'intérêts.",
+      "Aucun contenu de votre dilemme ne circule par email : seulement un lien vers la plateforme.",
+      "Vos documents sont stockés de façon privée et chiffrée."
+    ],
+    "pricesNote": "Les tarifs sont présentés une fois votre compte créé."
+  },
+  "footer": {
+    "legal": "Conditions d'utilisation",
+    "privacy": "Engagement de confidentialité",
+    "copyright": "Brainiacs"
+  },
+  "auth": {
+    "loginTitle": "Se connecter",
+    "email": "Email",
+    "password": "Mot de passe",
+    "passwordHint": "12 caractères minimum.",
+    "loginSubmit": "Se connecter",
+    "loginError": "Email ou mot de passe incorrect.",
+    "emailNotConfirmed": "Votre email n'est pas encore confirmé. Ouvrez le lien reçu par email.",
+    "noAccount": "Pas encore de compte ?",
+    "signupLink": "Créer un compte",
+    "forgot": "Mot de passe oublié",
+    "forgotTitle": "Réinitialiser le mot de passe",
+    "forgotLead": "Indiquez votre email. Si un compte existe, vous recevrez un lien.",
+    "forgotSubmit": "Recevoir un lien",
+    "forgotSent": "Si un compte existe pour cet email, un lien vient d'être envoyé.",
+    "setPasswordTitle": "Choisir votre mot de passe",
+    "setPasswordSubmit": "Enregistrer le mot de passe",
+    "passwordTooShort": "Le mot de passe doit contenir au moins 12 caractères.",
+    "linkInvalid": "Ce lien n'est plus valide. Demandez-en un nouveau.",
+    "genericError": "Une erreur est survenue. Réessayez dans un instant."
+  },
+  "signup": {
+    "title": "Créer votre compte",
+    "lead": "Ces informations restent confidentielles. Elles servent à vous proposer un expert sans conflit d'intérêts.",
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "Ex. : Awa Ndiaye",
+    "jobTitle": "Fonction",
+    "jobTitlePlaceholder": "Ex. : Directrice générale",
+    "organization": "Organisation",
+    "organizationPlaceholder": "Ex. : Société camerounaise de distribution",
+    "sector": "Secteur",
+    "sectorPlaceholder": "Ex. : Agroalimentaire",
+    "country": "Pays",
+    "whatsapp": "Téléphone WhatsApp",
+    "whatsappHint": "Avec l'indicatif du pays, ex. : +237 6 99 00 00 00.",
+    "submit": "Créer mon compte",
+    "required": "Ce champ est obligatoire.",
+    "mustAccept": "Vous devez accepter les conditions et l'engagement de confidentialité.",
+    "emailInvalid": "Indiquez un email valide, ex. : nom@entreprise.cm.",
+    "phoneInvalid": "Indiquez un numéro avec l'indicatif, ex. : +237 6 99 00 00 00.",
+    "emailTaken": "Un compte existe déjà avec cet email. Connectez-vous ou réinitialisez votre mot de passe.",
+    "checkEmailTitle": "Confirmez votre email",
+    "checkEmailText": "Un lien de confirmation vient d'être envoyé. Ouvrez-le pour accéder à votre espace.",
+    "termsPrefix": "J'accepte les",
+    "termsLink": "conditions d'utilisation",
+    "confidentialityPrefix": "J'accepte l'",
+    "confidentialityLink": "engagement de confidentialité"
+  },
+  "dirigeant": {
+    "title": "Mon espace",
+    "welcome": "Bienvenue",
+    "creditsLabel": "Crédits disponibles",
+    "creditsSoon": "L'achat de crédits sera disponible prochainement.",
+    "dilemmasTitle": "Mes dilemmes",
+    "dilemmasEmpty": "Vous n'avez pas encore soumis de dilemme.",
+    "deliverablesTitle": "Mes livrables",
+    "deliverablesEmpty": "Vos livrables de décision apparaîtront ici."
+  },
+  "expert": {
+    "title": "Espace expert",
+    "welcome": "Bienvenue",
+    "invitationsTitle": "Missions proposées",
+    "invitationsEmpty": "Aucune mission ne vous est proposée pour le moment.",
+    "noProfile": "Votre fiche expert n'est pas encore complète. Brainiacs vous contactera."
+  },
+  "admin": {
+    "title": "Back-office",
+    "navHome": "Accueil",
+    "navExperts": "Experts",
+    "navSecurity": "Sécurité",
+    "homeLead": "Le pilotage des dilemmes, des crédits et des relances arrivera dans les prochains lots.",
+    "queueTitle": "File des dilemmes",
+    "queueEmpty": "Aucun dilemme pour le moment.",
+    "expertsTitle": "Pool d'experts",
+    "expertsEmpty": "Aucun expert pour le moment.",
+    "newExpert": "Ajouter un expert",
+    "colName": "Nom",
+    "colEmail": "Email",
+    "colDomains": "Domaines",
+    "colFee": "Tarif par session",
+    "colNda": "NDA",
+    "colStatus": "Statut",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "ndaSigned": "Signé le",
+    "ndaMissing": "Non signé",
+    "expertFormTitle": "Nouvel expert",
+    "expertFormLead": "L'expert reçoit un email d'invitation pour choisir son mot de passe.",
+    "domains": "Domaines",
+    "experience": "Expérience",
+    "experiencePlaceholder": "Ex. : 20 ans dans la distribution, ancien DG d'une filiale régionale",
+    "fee": "Tarif par session (FCFA)",
+    "ndaSignedLabel": "NDA signé",
+    "ndaDate": "Date de signature du NDA",
+    "ndaHint": "Un expert sans NDA signé ne pourra pas être assigné à un dilemme.",
+    "conflicts": "Organisations en conflit d'intérêts",
+    "conflictsHint": "L'expert ne sera jamais proposé pour un dilemme de ces organisations.",
+    "conflictsEmpty": "Aucune organisation enregistrée pour le moment.",
+    "activeLabel": "Expert actif",
+    "createSubmit": "Créer l'expert",
+    "created": "L'expert a été créé et invité par email.",
+    "emailTaken": "Un compte existe déjà avec cet email.",
+    "ndaDateRequired": "Indiquez la date de signature du NDA.",
+    "domainsRequired": "Choisissez au moins un domaine.",
+    "forbidden": "Vous n'avez pas accès à cette action."
+  },
+  "mfa": {
+    "title": "Double authentification",
+    "requiredLead": "Le back-office exige une double authentification. Elle protège les dilemmes des dirigeants.",
+    "enrollStep1": "Installez une application d'authentification sur votre téléphone (Google Authenticator, Microsoft Authenticator ou Authy).",
+    "enrollStep2": "Scannez ce code avec l'application.",
+    "enrollManual": "Ou saisissez cette clé dans l'application :",
+    "enrollStep3": "Saisissez le code à 6 chiffres affiché par l'application.",
+    "verifyLead": "Saisissez le code à 6 chiffres affiché par votre application d'authentification.",
+    "code": "Code à 6 chiffres",
+    "submit": "Valider le code",
+    "invalidCode": "Ce code n'est pas valide. Saisissez le code affiché en ce moment.",
+    "done": "La double authentification est active sur ce compte."
+  },
+  "domains": {
+    "strategie": "Stratégie",
+    "gestion_projet": "Gestion de projet",
+    "innovation": "Innovation",
+    "rh": "Ressources humaines"
+  },
+  "legal": {
+    "termsTitle": "Conditions d'utilisation",
+    "privacyTitle": "Engagement de confidentialité",
+    "pending": "Le texte définitif est en cours de relecture juridique. Il sera publié ici avant l'ouverture du service."
+  }
+}
