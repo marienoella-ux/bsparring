@@ -52,7 +52,7 @@ Le dépôt reste sur `marienoella-ux/bsparring` : pas de transfert vers une orga
 | --- | --- | --- |
 | Double authentification TOTP | Authentication → Multi-Factor | **TOTP activé** |
 | Inscriptions | Authentication → Sign In / Providers → Email | Activé, confirmation d'email activée |
-| URL du site | Authentication → URL Configuration | L'URL de test Vercel (communiquée une fois Vercel connecté) |
+| URL du site | Authentication → URL Configuration | L'adresse de test Vercel, tant que `main` n'est pas déployée (voir `docs/02-configuration-supabase.md`) |
 | URLs de redirection | Authentication → URL Configuration | `https://*-<équipe-vercel>.vercel.app/**` et l'URL de test |
 
 Variables à renseigner dans **l'environnement Claude Code** (voir section 4) :
@@ -85,13 +85,13 @@ Variables d'environnement (Settings → Environment Variables), à copier **dire
 
 | Variable | Environnements Vercel | Valeur |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SUPABASE_URL` | Preview | Project URL du projet de **test** |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Preview | Clé `anon` / publishable du projet de **test** |
-| `SUPABASE_SERVICE_ROLE_KEY` | Preview | Clé `service_role` / secret du projet de **test** — cocher **Sensitive** |
+| `NEXT_PUBLIC_SUPABASE_URL` | Production et Preview | Project URL du projet de **test** |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Production et Preview | Clé `anon` / publishable du projet de **test** |
+| `SUPABASE_SERVICE_ROLE_KEY` | Production et Preview | Clé `service_role` / secret du projet de **test** — cocher **Sensitive** |
 | `CRON_SECRET` | Preview | Une valeur aléatoire générée par Vercel ou par un gestionnaire de mots de passe (32 caractères ou plus) — cocher **Sensitive**. Sert au lot 2. |
-| `APP_URL` | Preview | L'URL de test |
+| `APP_URL` | Production et Preview | L'URL de test |
 
-L'environnement **Production** de Vercel reste vide jusqu'à l'avis juridique.
+Tant que la production n'est pas ouverte, les environnements Production et Preview de Vercel pointent tous deux vers le projet Supabase de **test**. Les valeurs de Production basculeront vers le projet Supabase de production après l'avis juridique. Relancer un déploiement après toute modification de variable.
 
 ---
 
@@ -110,9 +110,9 @@ Entre personnes de Brainiacs (par exemple pour transmettre le mot de passe de la
 
 ---
 
-## 5. Resend (lot 4)
+## 5. Resend
 
-Rien à faire avant le lot 4. La liste des accès sera ajoutée ici à ce moment-là (clé API à portée « envoi seulement », limitée au domaine `brainiacscompany.com`).
+Branché dès le lot 1 comme serveur SMTP de Supabase (expéditeur `sparring@brainiacscompany.com`), voir `docs/02-configuration-supabase.md`. La clé API (portée « Sending access », domaine `brainiacscompany.com`) va directement de Resend vers Supabase. Dev n'en a pas besoin avant le lot 4, où les notifications de la plateforme passeront aussi par Resend.
 
 ---
 
@@ -124,4 +124,4 @@ Rien à faire avant le lot 4. La liste des accès sera ajoutée ici à ce moment
 | Supabase test | Aucun rôle sur le tableau de bord | 4 variables | Environnement Claude Code |
 | Supabase production | Aucun | Rien | — |
 | Vercel | Aucun | Rien (Brainiacs copie les clés de Supabase vers Vercel) | — |
-| Resend | Lot 4 | Lot 4 | Environnement Claude Code |
+| Resend | Aucun avant le lot 4 | Rien (Brainiacs colle la clé dans les réglages SMTP de Supabase) | — |
