@@ -23,6 +23,6 @@ for f in "$ROOT"/supabase/migrations/*.sql; do
 done
 for f in "$ROOT"/supabase/tests/*.test.sql; do
   echo "Tests : $(basename "$f")"
-  "${PSQL[@]}" -f "$f"
+  "${PSQL[@]}" -f "$ROOT/supabase/tests/_helpers.sql" -f "$f" -c "reset role; drop schema test cascade;"
 done
 echo "Tous les tests de base de données sont passés."

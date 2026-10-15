@@ -2,34 +2,6 @@
 -- Chaque bloc se met dans la peau d'un utilisateur, puis vérifie ce que la base
 -- lui laisse lire ou écrire. Un échec arrête l'exécution avec un message clair.
 
-create schema test;
-
-create function test.as_user(p_id uuid, p_aal text default 'aal1') returns void
-language plpgsql as $$
-begin
-  perform set_config('request.jwt.claims',
-    json_build_object('sub', p_id, 'role', 'authenticated', 'aal', p_aal)::text, false);
-  execute 'set role authenticated';
-end $$;
-
-create function test.as_anon() returns void
-language plpgsql as $$
-begin
-  perform set_config('request.jwt.claims', '{"role":"anon"}', false);
-  execute 'set role anon';
-end $$;
-
-create function test.check(cond boolean, msg text) returns void
-language plpgsql as $$
-begin
-  if not coalesce(cond, false) then
-    raise exception 'ÉCHEC : %', msg;
-  end if;
-end $$;
-
-grant usage on schema test to anon, authenticated;
-grant execute on all functions in schema test to anon, authenticated;
-
 -- ---------------------------------------------------------------------------
 -- Comptes de test
 -- ---------------------------------------------------------------------------
@@ -184,4 +156,3 @@ select test.as_user('00000000-0000-0000-0000-0000000000e1');
 select test.check((select count(*) = 1 from public.expert_conflicts), 'un expert voit ses propres conflits déclarés');
 reset role;
 
-drop schema test cascade;
