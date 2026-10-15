@@ -233,7 +233,11 @@ as $$
         where dirigeant_id = auth.uid() and pioneer_bonus_credits > 0
       ),
     'pioneer_bonus_credits', public.setting_int('pioneer_bonus_credits', 1),
-    'credit_validity_months', public.setting_int('credit_validity_months', 12)
+    'credit_validity_months', public.setting_int('credit_validity_months', 12),
+    'credit_expiry_alert_days', public.setting_int('credit_expiry_alert_days', 30),
+    'validation_delay_text', coalesce(
+      (select value #>> '{}' from public.settings where key = 'payment_validation_delay_text'),
+      'sous 24 h ouvrées')
   )
 $$;
 

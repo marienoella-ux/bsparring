@@ -5,6 +5,7 @@ Plateforme de sparring stratégique pour dirigeants : achat de crédits, soumiss
 - `docs/00-architecture.md` — architecture validée (lot 0).
 - `docs/01-acces-et-secrets.md` — accès à configurer et transmission des secrets.
 - `docs/02-configuration-supabase.md` — configuration du projet Supabase de test, premier admin, vérification du lot 1.
+- `docs/03-lot-2-credits.md` — lot 2 : règles de crédit, mise en place, critères d'acceptation.
 - `design/` — charte graphique B-Sparring (tokens, logos, règles des composants).
 
 ## Développement
