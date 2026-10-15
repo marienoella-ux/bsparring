@@ -134,7 +134,8 @@
     "recharge": "Recharger",
     "paymentsTitle": "Mes paiements",
     "paymentsEmpty": "Aucun paiement pour le moment.",
-    "paymentDeclared": "Paiement déclaré. Vos crédits seront ajoutés après vérification, {delay}."
+    "paymentDeclared": "Paiement déclaré. Vos crédits seront ajoutés après vérification, {delay}.",
+    "creditsSoon": "L'achat de crédits sera disponible prochainement."
   },
   "expert": {
     "title": "Espace expert",
@@ -342,5 +343,13 @@
     "restitution": "Restitution",
     "expiration": "Expiration",
     "ajustement": "Ajustement"
+  },
+  "errors": {
+    "unavailableTitle": "Service momentanément indisponible",
+    "unavailableText": "B-Sparring est en cours de maintenance. Réessayez dans quelques minutes.",
+    "errorTitle": "Une erreur est survenue",
+    "errorText": "La page n'a pas pu s'afficher. Réessayez dans un instant.",
+    "retry": "Réessayer",
+    "home": "Revenir à l'accueil"
   }
 }
