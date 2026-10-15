@@ -1,0 +1,3 @@
+# Migrations du lot 2, dans l'ordre
+20261015000001_credits
+20261015000002_moyens_paiement
