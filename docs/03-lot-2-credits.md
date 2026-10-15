@@ -24,12 +24,14 @@
 
 ## Mise en place sur le projet de test
 
-### 1. Appliquer la migration
+### 1. Appliquer le script SQL du lot
 
-Dans Supabase → **SQL Editor → New query**, coller puis exécuter, dans l'ordre, les fichiers fournis par Dev (chacun en une seule transaction) :
+Un seul fichier par lot, assemblé par `bash scripts/build-lot-sql.sh 2`. Son en-tête indique la version (`lot-2@<commit>`) et le commit correspondant. Il se colle en entier dans Supabase → **SQL Editor → New query**, puis **Run**.
 
-1. `20261015000001_credits` : schéma des crédits, packs et paiements.
-2. `20261015000002_moyens_paiement` : numéros et bénéficiaires de départ.
+- Tout s'exécute en une seule transaction : en cas d'erreur, rien n'est appliqué.
+- Le script part de l'état actuel de la base. Si des objets du lot 2 existent déjà (version ancienne ou partielle), il les déplace avec leurs données dans un schéma de sauvegarde `lot2_ancien_<date>`, puis recrée la version finale. Il peut être exécuté plusieurs fois.
+- Il se termine par un tableau de contrôle : chaque table, type, fonction, règle de sécurité, donnée de départ et paramètre du lot doit afficher « OK ».
+- Une fois le lot vérifié, les schémas de sauvegarde peuvent être supprimés : `drop schema lot2_ancien_<date> cascade;`
 
 ### 2. Planifier l'expiration quotidienne
 
