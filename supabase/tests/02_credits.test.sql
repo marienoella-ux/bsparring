@@ -18,6 +18,17 @@ create function test.pack_id(p_name text) returns uuid language sql as $$
 $$;
 grant execute on function test.pack_id(text) to authenticated;
 
+-- Valeurs de départ des moyens de paiement
+select test.check(
+  (select active and phone = '+237659989910' and beneficiary = 'Marie Noella Tetka'
+   from public.payment_methods where operator = 'orange_money'),
+  'Orange Money actif avec le numéro et le bénéficiaire de départ');
+select test.check(
+  (select not active and phone = '+237678812669' from public.payment_methods where operator = 'mtn_momo'),
+  'MTN renseigné mais inactif sans bénéficiaire');
+-- Le scénario ci-dessous part d'Orange Money inactif.
+update public.payment_methods set active = false, beneficiary = '' where operator = 'orange_money';
+
 -- ---------------------------------------------------------------------------
 -- Packs : visibles des dirigeants connectés seulement
 -- ---------------------------------------------------------------------------
@@ -54,7 +65,7 @@ select test.check(
   'un admin sans 2FA ne modifie pas les moyens de paiement');
 
 select test.as_user('20000000-0000-0000-0000-0000000000a1', 'aal2');
-update public.payment_methods set beneficiary = 'BRAINIACS SARL', active = true where operator = 'orange_money';
+update public.payment_methods set beneficiary = 'Marie Noella Tetka', active = true where operator = 'orange_money';
 select test.expect_error(
   $$update public.payment_methods set active = true where operator = 'mtn_momo'$$,
   'active_requires_details', 'activer MTN sans numéro ni bénéficiaire');

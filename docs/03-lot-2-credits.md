@@ -26,14 +26,10 @@
 
 ### 1. Appliquer la migration
 
-Dans Supabase → **SQL Editor → New query**, coller le fichier `supabase/migrations/20261015000001_credits.sql` en entier, précédé de `begin;` et suivi de :
+Dans Supabase → **SQL Editor → New query**, coller puis exécuter, dans l'ordre, les fichiers fournis par Dev (chacun en une seule transaction) :
 
-```sql
-insert into public.bs_schema_migrations (version) values ('20261015000001_credits');
-commit;
-```
-
-(Dev fournit ce fichier prêt à coller.)
+1. `20261015000001_credits` : schéma des crédits, packs et paiements.
+2. `20261015000002_moyens_paiement` : numéros et bénéficiaires de départ.
 
 ### 2. Planifier l'expiration quotidienne
 
@@ -52,15 +48,18 @@ select cron.schedule(
 
 L'alerte par email 30 jours avant expiration arrive avec les notifications du lot 4. D'ici là, « Mon espace » affiche « Attention » quand un lot expire dans moins de 30 jours.
 
-### 3. Activer Orange Money
+### 3. Moyens de paiement
 
-Back-office → **Paramètres → Moyens de paiement → Orange Money** :
+La migration `20261015000002_moyens_paiement` renseigne les valeurs de départ :
 
-1. Vérifier le numéro (`+237 6 59 98 99 10`).
-2. Saisir le bénéficiaire, tel qu'il s'affiche lors d'un transfert.
-3. Cocher « Proposé aux dirigeants », puis enregistrer.
+| Opérateur | Numéro | Bénéficiaire affiché | État |
+| --- | --- | --- | --- |
+| Orange Money (#150#) | +237 6 59 98 99 10 | Marie Noella Tetka | Actif |
+| MTN Mobile Money (*126#) | +237 6 78 81 26 69 | À confirmer | Inactif |
 
-Un moyen de paiement ne peut pas être activé sans numéro ni bénéficiaire. MTN Mobile Money reste inactif tant que son numéro et son bénéficiaire ne sont pas renseignés.
+Pour activer MTN, ou pour passer plus tard à un compte marchand Brainiacs, allez dans le back-office, **Paramètres → Moyens de paiement**. Modifiez le numéro et le bénéficiaire, cochez « Proposé aux dirigeants », puis enregistrez. Le changement s'applique aux déclarations suivantes : chaque paiement garde le numéro affiché au moment de sa déclaration. Un moyen de paiement ne peut pas être activé sans numéro ni bénéficiaire.
+
+Quand plusieurs opérateurs sont actifs, le dirigeant choisit le sien et voit les instructions correspondantes.
 
 ## Critères d'acceptation du lot 2
 
