@@ -13,7 +13,7 @@ revoke all on schema lot2_ancien from public, anon, authenticated;
 
 do $$
 declare
-  suffix text := to_char(clock_timestamp(), 'YYYYMMDD_HH24MISS');
+  suffix text := to_char(clock_timestamp(), 'YYYYMMDD_HH24MISS_US');
   t text;
   r record;
 begin
