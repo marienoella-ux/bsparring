@@ -201,5 +201,13 @@
     "termsTitle": "Conditions d'utilisation",
     "privacyTitle": "Engagement de confidentialité",
     "pending": "Le texte définitif est en cours de relecture juridique. Il sera publié ici avant l'ouverture du service."
+  },
+  "errors": {
+    "unavailableTitle": "Service momentanément indisponible",
+    "unavailableText": "B-Sparring est en cours de maintenance. Réessayez dans quelques minutes.",
+    "errorTitle": "Une erreur est survenue",
+    "errorText": "La page n'a pas pu s'afficher. Réessayez dans un instant.",
+    "retry": "Réessayer",
+    "home": "Revenir à l'accueil"
   }
 }
