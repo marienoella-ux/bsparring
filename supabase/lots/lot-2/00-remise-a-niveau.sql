@@ -3,26 +3,28 @@
 -- ---------------------------------------------------------------------------
 -- Une base peut contenir une version partielle ou ancienne du lot 2. Plutôt
 -- que de deviner les écarts, on déplace ces objets (avec leurs données) dans
--- le schéma lot2_ancien, puis on recrée la version finale.
--- Rien n'est supprimé, sauf les fonctions (recréées à l'identique plus bas).
--- Une fois le lot 2 vérifié, le schéma lot2_ancien peut être supprimé :
---   drop schema lot2_ancien cascade;
-
-create schema if not exists lot2_ancien;
-revoke all on schema lot2_ancien from public, anon, authenticated;
+-- un schéma de sauvegarde propre à cette exécution (lot2_ancien_<date>),
+-- puis on recrée la version finale. Rien n'est supprimé, sauf les fonctions
+-- (recréées à l'identique plus bas). Une fois le lot 2 vérifié, ces schémas
+-- peuvent être supprimés : drop schema lot2_ancien_<date> cascade;
 
 do $$
 declare
-  suffix text := to_char(clock_timestamp(), 'YYYYMMDD_HH24MISS_US');
+  backup text := 'lot2_ancien_' || to_char(clock_timestamp(), 'YYYYMMDD_HH24MISS_US');
+  created boolean := false;
   t text;
   r record;
 begin
-  -- Tables (enfants d'abord) : renommées avec un suffixe horodaté, puis déplacées.
+  -- Tables (enfants d'abord), avec leurs index, contraintes et données.
   foreach t in array array['credit_movements', 'credit_reservations', 'credit_lots', 'payments', 'payment_methods', 'packs'] loop
     if to_regclass(format('public.%I', t)) is not null then
-      execute format('alter table public.%I rename to %I', t, t || '_' || suffix);
-      execute format('alter table public.%I set schema lot2_ancien', t || '_' || suffix);
-      raise notice 'Table % mise de côté dans lot2_ancien.%', t, t || '_' || suffix;
+      if not created then
+        execute format('create schema %I', backup);
+        execute format('revoke all on schema %I from public, anon, authenticated', backup);
+        created := true;
+      end if;
+      execute format('alter table public.%I set schema %I', t, backup);
+      raise notice 'Table % mise de côté dans %.%', t, backup, t;
     end if;
   end loop;
 
@@ -39,11 +41,15 @@ begin
     execute format('drop function %s cascade', r.sig);
   end loop;
 
-  -- Types énumérés : renommés et déplacés (les anciennes tables les utilisent encore).
+  -- Types énumérés : déplacés aussi (les tables mises de côté les utilisent encore).
   foreach t in array array['payment_status', 'payment_operator', 'credit_lot_source', 'credit_movement_type', 'reservation_status'] loop
     if to_regtype(format('public.%I', t)) is not null then
-      execute format('alter type public.%I rename to %I', t, t || '_' || suffix);
-      execute format('alter type public.%I set schema lot2_ancien', t || '_' || suffix);
+      if not created then
+        execute format('create schema %I', backup);
+        execute format('revoke all on schema %I from public, anon, authenticated', backup);
+        created := true;
+      end if;
+      execute format('alter type public.%I set schema %I', t, backup);
     end if;
   end loop;
 end $$;
